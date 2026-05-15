@@ -1,6 +1,17 @@
 import { useState } from 'react'
+import {
+  FormContainer,
+  FormTitle,
+  Form,
+  FormField,
+  Label,
+  Input,
+  Button,
+} from './FormStyles'
+
 
 const BlogForm = ({ createBlog }) => {
+
   const [newTitle, setNewTitle] = useState('')
   const [newAuthor, setNewAuthor] = useState('')
   const [newUrl, setNewUrl] = useState('')
@@ -17,42 +28,42 @@ const BlogForm = ({ createBlog }) => {
     setNewUrl('')
   }
   return (
-    <div>
-      <h2>create new</h2>
-      <form onSubmit={createBlogHandler}>
-        <div>
-            title:
-          <input
+    <FormContainer>
+      <FormTitle>create new</FormTitle>
+      <Form onSubmit={createBlogHandler}>
+        <FormField>
+          <Label>title</Label>
+          <Input
             placeholder='title'
             type="text"
             value={newTitle}
             name="Title"
             onChange={({ target }) => setNewTitle(target.value)}
           />
-        </div>
-        <div>
-            author:
-          <input
+        </FormField>
+        <FormField>
+          <Label>author</Label>
+          <Input
             placeholder='author'
             type="text"
             value={newAuthor}
             name="Author"
             onChange={({ target }) => setNewAuthor(target.value)}
           />
-        </div>
-        <div>
-            url:
-          <input
+        </FormField>
+        <FormField>
+          <Label>url</Label>
+          <Input
             placeholder='url'
             type="text"
             value={newUrl}
             name="Url"
             onChange={({ target }) => setNewUrl(target.value)}
           />
-        </div>
-        <button type="submit">create</button>
-      </form>
-    </div>
+        </FormField>
+        <Button type="submit">create</Button>
+      </Form>
+    </FormContainer>
   )
 }
 

@@ -13,9 +13,12 @@ const Blog = ({ blog, likeHandler, deleteBlogHandler, user }) => {
 
    
 
-  
+  let showDeleteButton = false
 
-  const showDeleteButton = blog.user.id === user.id
+  if (user) {
+    showDeleteButton = blog.user.id === user.id
+  } 
+  
   
   const toggleVisibility = () => {
     setVisible(!visible)
