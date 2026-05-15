@@ -65,6 +65,7 @@ const App = () => {
       <div>
         username
         <input
+          placeholder="Username"
           type="text"
           value={username}
           name="Username"
@@ -74,6 +75,7 @@ const App = () => {
       <div>
         password
         <input
+          placeholder="Password"
           type="password"
           value={password}
           name="Password"
